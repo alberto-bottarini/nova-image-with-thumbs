@@ -38,7 +38,7 @@ If you need to show thumbnail inside index or detail form, you can add a new sta
 
 ```php
 Image::make('Thumbnail')
-    ->exceptOnForms()
     ->disk('public')
-    ->prunable(),
+    ->path('images-from-nova')
+    ->exceptOnForms()
 ```
