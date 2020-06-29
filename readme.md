@@ -37,7 +37,7 @@ NovaImageWithThumbs take care of prunable images. If you delete a model with thu
 If you need to show thumbnail inside index or detail form, you can add a new standard Image Field to your resource:
 
 ```php
-Image::make('Thumbnail')
+Image::make('Thumbnail', 'thumbnail')
     ->disk('public')
     ->path('images-from-nova')
     ->exceptOnForms()
