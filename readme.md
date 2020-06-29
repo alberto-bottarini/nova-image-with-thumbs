@@ -15,7 +15,8 @@ NovaImageWithThumbs::make('Image', 'image')
     ->hideFromIndex(),
 ```
 
-This field will automatically generate two image on your disk and will fill `image` and `thumbnail` attribute of your model with path of these files. Using `$model->image` you will find original uploaded image and with `$model->thumbnail` you will find a 200x100 image.
+This field will automatically generate two images on your disk and will fill `image` and `thumbnail` attribute of your model with path of these files. 
+Using `$model->image` you will find original uploaded image and with `$model->thumbnail` you will find a 200x100 image.
 
 ## Configuration
 
@@ -30,11 +31,11 @@ This field will automatically generate two image on your disk and will fill `ima
 
 ## Prunable
 
-NovaImageWithThumbs take care of prunable images. If you delete a model with thumbnails, the field will automatically deletes useless files for you.
+NovaImageWithThumbs takes care of prunable images. If you delete a model with thumbnails, the field will automatically deletes useless files for you.
 
 ## Show thumbnails to users
 
-If you need to show thumbnail inside index or detail form, you can add a new standard Image Field to your resource:
+If you need to show thumbnails inside index or detail page, you can add a new standard Image Field to your resource:
 
 ```php
 Image::make('Thumbnail', 'thumbnail')
