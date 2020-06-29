@@ -75,8 +75,10 @@ class NovaImageWithThumbs extends Image
 
             $all[$name] = $fileName;
 
-            if ($model->$name) {
-                Storage::disk($this->getStorageDisk())->delete($model->$name);
+            if ($this->isPrunable()) {
+                if ($model->$name) {
+                    Storage::disk($this->getStorageDisk())->delete($model->$name);
+                }
             }
 
             return $all;
@@ -86,6 +88,10 @@ class NovaImageWithThumbs extends Image
 
     private function deleteWithThumbs($request, $model, $disk, $path)
     {
+
+        if (!$this->isPrunable()) {
+            return;
+        }
 
         if (!$path) {
             return;
