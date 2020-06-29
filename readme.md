@@ -5,14 +5,14 @@ This custom fields add thumbnail ability to standard Image Field in Laravel Nova
 Take a look at this example:
 
 ```php
-    NovaImageWithThumbs::make('Image', 'image')
-        ->thumbs([
-            ['name' => 'thumbnail', 'w' => 200, 'h' => 100, 'method' => 'fit'],
-        ])
-        ->disk('public')
-        ->path('images-from-nova')
-        ->prunable()
-        ->hideFromIndex(),
+NovaImageWithThumbs::make('Image', 'image')
+    ->thumbs([
+        ['name' => 'thumbnail', 'w' => 200, 'h' => 100, 'method' => 'fit'],
+    ])
+    ->disk('public')
+    ->path('images-from-nova')
+    ->prunable()
+    ->hideFromIndex(),
 ```
 
 This field will automatically generate two image on your disk and will fill `image` and `thumbnail` attribute of your model with path of these files. Using `$model->image` you will find original uploaded image and with `$model->thumbnail` you will find a 200x100 image.
@@ -41,5 +41,4 @@ Image::make('Thumbnail')
     ->exceptOnForms()
     ->disk('public')
     ->prunable(),
-    ```
-
+```
