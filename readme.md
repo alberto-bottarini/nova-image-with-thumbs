@@ -27,7 +27,7 @@ Using `$model->image` you will find original uploaded image and with `$model->th
 | name   | Y         | string               | The model column where you want to persist your thumbnail path |
 | w      | Y         | integer              | The width of thumbnail                                         |
 | h      | Y         | integer              | The height of thumbnail                                        |
-| method | Y         | string (fit|resize)  | The Intervention method to generate image                      |
+| method | Y         | string (fit/resize)  | The Intervention method to generate image                      |
 
 ## Prunable
 
